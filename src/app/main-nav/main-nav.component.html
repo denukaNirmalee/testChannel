@@ -1,0 +1,94 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)">
+    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-nav-list>
+        <a href="/home">
+        <button mat-menu-item matTooltip="Home">
+            <mat-icon>home</mat-icon>
+            <span>Home</span>
+            </button>
+        </a>
+    <button mat-menu-item matTooltip="Trending">
+            <mat-icon>trending_up</mat-icon>
+            <span>Trending</span>
+            </button>
+    <button mat-menu-item matTooltip="Subscriptions">
+            <mat-icon>subscriptions</mat-icon>
+            <span>Subscriptions</span>
+            </button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item disabled>LIBRARY</button>
+                <button mat-menu-item matTooltip="History">
+                        <mat-icon>history</mat-icon>
+                        <span>History</span>
+                        </button>
+                <button mat-menu-item matTooltip="Watch Later">
+                        <mat-icon>watch_later</mat-icon>
+                        <span>Watch Later</span>
+                        </button>
+                <button mat-menu-item matTooltip="Liked Videos">
+                        <mat-icon>thumb_up</mat-icon>
+                        <span>Liked Videos</span>
+                        </button>
+                <mat-divider></mat-divider>      
+                <button mat-menu-item>SUBSCRIPTIONS</button> 
+                
+                <mat-divider></mat-divider>      
+                <button mat-menu-item disabled>MORE FROM YOUTUBE</button>
+                <button mat-menu-item matTooltip="Live">
+                        <mat-icon>live_tv</mat-icon>
+                        <span>Live</span>
+                        </button>
+                <mat-divider></mat-divider>
+            
+            <button mat-menu-item matTooltip="Settings">
+                        <mat-icon>settings</mat-icon>
+                        <span>Settings</span>
+                        </button>
+                <button mat-menu-item matTooltip="Report History">
+                        <mat-icon>flag</mat-icon>
+                        <span>Report History</span>
+                        </button>
+                <button mat-menu-item matTooltip="Help">
+                        <mat-icon>help</mat-icon>
+                        <span>Help</span>
+                        </button>
+                <button mat-menu-item matTooltip="">
+                        <mat-icon>feedback</mat-icon>
+                        <span>Send Feedback</span>
+                        </button>
+                <mat-divider></mat-divider>
+      <!-- <a mat-list-item href="#">Link 1</a>
+      <a mat-list-item href="#">Link 2</a>
+      <a mat-list-item href="#">Link 3</a> -->
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>ViuTube Test Channel</span>
+      <span class="example-spacer"></span>
+      <mat-icon class="example-icon" matTooltip="Backup">backup</mat-icon>
+      <mat-icon class="example-icon" matTooltip="Apps">apps</mat-icon>
+      <mat-icon class="example-icon" matTooltip="Messages">message</mat-icon>
+      <mat-icon class="example-icon" matTooltip="Notifications">notification_important</mat-icon>
+      <mat-icon class="example-icon">person_outline</mat-icon>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <app-main-dash></app-main-dash>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<router-outlet></router-outlet>

@@ -1,0 +1,18 @@
+<h1>View Data From nadeo Post Method </h1>
+<h2>Output is displayed in console & in page as object array when you clicked</h2>
+
+<div class="example-large-box mat-elevation-z4"  >
+  <button mat-button (click)="getVideoList()">click</button>
+
+</div>
+
+<!--   
+<div *ngFor='let tstVdeo of channelVdeo'>
+  {{tstVdeo.title}}
+  </div> -->
+
+  <mat-chip-list class="mat-chip-list-stacked">
+    <mat-chip *ngFor='let tstVdeo of channelVdeo'>
+      {{tstVdeo.title}}
+    </mat-chip>
+  </mat-chip-list>

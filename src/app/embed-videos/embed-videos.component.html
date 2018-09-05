@@ -1,0 +1,12 @@
+<p>
+    {{title}}
+  </p>
+  <div *ngFor='let abc of videoList'>
+    <div style="position:relative;height:0;padding-bottom:50%" *ngIf='abc.embed'>
+      <iframe [src]="getEmbedUrl(abc)"  width="640" height="360" 
+      frameborder="0" style="position:absolute;width:50%;height:50%;left:0%;"
+      allowfullscreen></iframe>
+    </div>
+  </div>
+  
+  
